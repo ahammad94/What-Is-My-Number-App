@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="What_Is_My_Number_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,58 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCF-CU-j9X">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="What's my number" id="k1a-TA-oMl"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZW-VC-2tf">
+                                <rect key="frame" x="16" y="323" width="343" height="82"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EXi-ht-gwp">
+                                <rect key="frame" x="16" y="93" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORo-5d-Wov">
+                                <rect key="frame" x="129" y="151" width="117" height="30"/>
+                                <state key="normal" title="Save My Number"/>
+                                <connections>
+                                    <action selector="saveNumberClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aea-kt-Qj9"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ORo-5d-Wov" firstAttribute="top" secondItem="EXi-ht-gwp" secondAttribute="bottom" constant="28" id="F8X-c0-meo"/>
+                            <constraint firstItem="HZW-VC-2tf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="HME-X4-brs"/>
+                            <constraint firstItem="ORo-5d-Wov" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="113" id="PoP-Ub-FFN"/>
+                            <constraint firstItem="EXi-ht-gwp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="TVW-YV-QoF"/>
+                            <constraint firstItem="EXi-ht-gwp" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="bpx-lX-HE1"/>
+                            <constraint firstAttribute="trailing" secondItem="sCF-CU-j9X" secondAttribute="trailing" id="cMQ-ew-agT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ORo-5d-Wov" secondAttribute="trailing" constant="113" id="ccY-9p-9FW"/>
+                            <constraint firstItem="EXi-ht-gwp" firstAttribute="top" secondItem="sCF-CU-j9X" secondAttribute="bottom" constant="30" id="hzw-7n-kQN"/>
+                            <constraint firstItem="HZW-VC-2tf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oIZ-cp-SFu"/>
+                            <constraint firstItem="HZW-VC-2tf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qNO-57-rSi"/>
+                            <constraint firstItem="sCF-CU-j9X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="slZ-nD-ZHf"/>
+                            <constraint firstItem="sCF-CU-j9X" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tsK-c7-uqa"/>
+                            <constraint firstItem="HZW-VC-2tf" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="y66-9B-wxY"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="inputField" destination="EXi-ht-gwp" id="BCW-nc-I7b"/>
+                        <outlet property="numLabel" destination="HZW-VC-2tf" id="2dK-5N-u3A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

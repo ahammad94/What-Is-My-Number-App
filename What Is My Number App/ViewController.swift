@@ -10,14 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var numLabel: UILabel!
+    @IBOutlet weak var inputField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let numObject = UserDefaults.standard.object(forKey: "number")
+        if let num = numObject as? String {
+            numLabel.text = num
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func saveNumberClicked(_ sender: Any) {
+        
+        if let num = inputField.text {
+            UserDefaults.standard.set(num, forKey:"number")
+            numLabel.text = num
+        }
+        
+        
     }
 
 
